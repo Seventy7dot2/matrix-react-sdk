@@ -127,9 +127,6 @@ const HomePage: React.FC<IProps> = ({ justRegistered = false }) => {
                     <AccessibleButton onClick={onClickSendDm} className="mx_HomePage_button_sendDm">
                         {_tDom("onboarding|send_dm")}
                     </AccessibleButton>
-                    <AccessibleButton onClick={onClickExplore} className="mx_HomePage_button_explore">
-                        {_tDom("onboarding|explore_rooms")}
-                    </AccessibleButton>
                     <AccessibleButton onClick={onClickNewRoom} className="mx_HomePage_button_createGroup">
                         {_tDom("onboarding|create_room")}
                     </AccessibleButton>

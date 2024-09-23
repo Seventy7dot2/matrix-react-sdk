@@ -315,34 +315,6 @@ export default function RoomHeader({
                     </button>
                 </ReleaseAnnouncement>
                 <Flex align="center" gap="var(--cpd-space-2x)">
-                    {additionalButtons?.map((props) => {
-                        const label = props.label();
-
-                        return (
-                            <Tooltip label={label} key={props.id}>
-                                <IconButton
-                                    aria-label={label}
-                                    onClick={(event) => {
-                                        event.stopPropagation();
-                                        props.onClick();
-                                    }}
-                                >
-                                    {typeof props.icon === "function" ? props.icon() : props.icon}
-                                </IconButton>
-                            </Tooltip>
-                        );
-                    })}
-
-                    {isViewingCall && <CallGuestLinkButton room={room} />}
-
-                    {hasActiveCallSession && !isConnectedToCall && !isViewingCall ? (
-                        joinCallButton
-                    ) : (
-                        <>
-                            {!isVideoRoom && videoCallButton}
-                            {!useElementCallExclusively && !isVideoRoom && voiceCallButton}
-                        </>
-                    )}
 
                     <Tooltip label={_t("right_panel|room_summary_card|title")}>
                         <IconButton
@@ -358,19 +330,7 @@ export default function RoomHeader({
 
                     {showChatButton && <VideoRoomChatButton room={room} />}
 
-                    <Tooltip label={_t("common|threads")}>
-                        <IconButton
-                            indicator={notificationLevelToIndicator(threadNotifications)}
-                            onClick={(evt) => {
-                                evt.stopPropagation();
-                                RightPanelStore.instance.showOrHidePanel(RightPanelPhases.ThreadPanel);
-                                PosthogTrackers.trackInteraction("WebRoomHeaderButtonsThreadsButton", evt);
-                            }}
-                            aria-label={_t("common|threads")}
-                        >
-                            <ThreadsIcon />
-                        </IconButton>
-                    </Tooltip>
+                    
                     {notificationsEnabled && (
                         <Tooltip label={_t("notifications|enable_prompt_toast_title")}>
                             <IconButton

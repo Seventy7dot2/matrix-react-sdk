@@ -18,7 +18,6 @@ limitations under the License.
 import React from "react";
 
 import AuthHeaderLogo from "./AuthHeaderLogo";
-import LanguageSelector from "./LanguageSelector";
 
 interface IProps {
     disableLanguageSelector?: boolean;
@@ -29,7 +28,6 @@ export default class AuthHeader extends React.Component<IProps> {
         return (
             <div className="mx_AuthHeader">
                 <AuthHeaderLogo />
-                <LanguageSelector disabled={this.props.disableLanguageSelector} />
             </div>
         );
     }

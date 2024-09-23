@@ -83,7 +83,7 @@ export const RightPanelTabs: React.FC<Props> = ({ phase, room }): JSX.Element | 
             >
                 {_t("common|people")}
             </NavItem>
-            <NavItem
+            {/* <NavItem
                 aria-controls="thread-panel"
                 id="thread-panel-tab"
                 onClick={() => {
@@ -107,7 +107,7 @@ export const RightPanelTabs: React.FC<Props> = ({ phase, room }): JSX.Element | 
                     >
                         {_t("common|extensions")}
                     </NavItem>
-                )}
+                )} */}
         </NavBar>
     );
 };

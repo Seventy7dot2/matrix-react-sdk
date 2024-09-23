@@ -432,9 +432,6 @@ const SpacePanel: React.FC = () => {
                             )}
                         </Droppable>
 
-                        <ThreadsActivityCentre displayButtonLabel={!isPanelCollapsed} />
-
-                        <QuickSettingsButton isPanelCollapsed={isPanelCollapsed} />
                     </nav>
                 </DragDropContext>
             )}

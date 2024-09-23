@@ -478,15 +478,16 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
         const flow = this.state.flows?.find((flow) => flow.type === "m.login." + loginType) as SSOFlow;
 
         return (
-            <SSOButtons
-                matrixClient={this.loginLogic.createTemporaryClient()}
-                flow={flow}
-                loginType={loginType}
-                fragmentAfterLogin={this.props.fragmentAfterLogin}
-                primary={!this.state.flows?.find((flow) => flow.type === "m.login.password")}
-                action={SSOAction.LOGIN}
-                disabled={this.isBusy()}
-            />
+            <div></div>
+            // <SSOButtons
+            //     matrixClient={this.loginLogic.createTemporaryClient()}
+            //     flow={flow}
+            //     loginType={loginType}
+            //     fragmentAfterLogin={this.props.fragmentAfterLogin}
+            //     primary={!this.state.flows?.find((flow) => flow.type === "m.login.password")}
+            //     action={SSOAction.LOGIN}
+            //     disabled={this.isBusy()}
+            // />
         );
     };
 
